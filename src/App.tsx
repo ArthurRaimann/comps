@@ -27,7 +27,7 @@ function App() {
         </Button>
       </div>
       <div>
-        <Button danger rounded outline>
+        <Button danger outline rounded>
           danger
         </Button>
       </div>

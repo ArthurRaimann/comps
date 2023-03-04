@@ -29,12 +29,20 @@ function Button({
   }
 
   const classes = classnames('flex items-center px-3 py-1.5 border', {
-    'border-blue-500 bg-blue-500 text-white': primary,
-    'border-gray-900 bg-gray-900 text-white': secondary,
-    'border-green-500 bg-green-500 text-white': success,
-    'border-yellow-400 bg-yellow-400 text-white': warning,
-    'border-red-500 bg-red-500 text-white': danger,
+    'border-blue-500': primary,
+    'bg-blue-500 text-white': primary && !outline,
+    'border-gray-900 ': secondary,
+    'bg-gray-900 text-white': secondary && !outline,
+    'border-green-500 ': success,
+    'bg-green-500 text-white': success && !outline,
+    'border-yellow-400': warning,
+    'bg-yellow-400 text-white': warning && !outline,
+    'border-red-500 ': danger,
+    'bg-red-500 text-white': danger && !outline,
     'rounded-full': rounded,
+  });
+
+  const classesOutline = classnames({
     'bg-white': outline,
     'text-blue-500': outline && primary,
     'text-gray-900': outline && secondary,
@@ -43,7 +51,7 @@ function Button({
     'text-red-500': outline && danger,
   });
 
-  return <button className={classes}>{children}</button>;
+  return <button className={`${classes} ${classesOutline}`}>{children}</button>;
 }
 
 export default Button;
