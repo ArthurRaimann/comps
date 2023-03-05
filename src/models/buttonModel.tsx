@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { MouseEventHandler, ReactNode } from 'react';
 
 export interface ButtonPropsType {
   children: ReactNode;
@@ -9,4 +9,7 @@ export interface ButtonPropsType {
   danger?: boolean;
   outline?: boolean;
   rounded?: boolean;
+  onClick?: MouseEventHandler;
+  className?: string;
+  rest?: any;
 }
