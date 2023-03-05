@@ -1,4 +1,4 @@
-import { ButtonPropsType } from './models/buttonModel';
+import { ButtonPropsType } from '../models/buttonModel';
 import classnames from 'classnames';
 
 function Button({
