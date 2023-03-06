@@ -1,40 +1,30 @@
-import Button from './components/Button';
-import { GoBell, GoCloudDownload } from 'react-icons/go';
+import Accordion from './components/Accordion';
 
 function App() {
-  const handleClick = () => {
-    console.log('Click');
-  };
+  const items = [
+    {
+      id: 'def34',
+      label: 'This is a Headline',
+      content:
+        'This is som content to see something in the body of this component',
+    },
+    {
+      id: 'njdv7',
+      label: 'This is a new Headline',
+      content:
+        'This is som content to see something in the body of this component',
+    },
+    {
+      id: 'nisdkv7',
+      label: 'This is a newer Headline',
+      content:
+        'This is som content to see something in the body of this component',
+    },
+  ];
 
   return (
-    <div className="App">
-      <div>
-        <Button primary onClick={handleClick}>
-          <GoBell />
-          primary
-        </Button>
-      </div>
-      <div>
-        <Button secondary className="m-5">
-          <GoCloudDownload />
-          secondary
-        </Button>
-      </div>
-      <div>
-        <Button warning outline>
-          warning
-        </Button>
-      </div>
-      <div>
-        <Button success rounded>
-          success
-        </Button>
-      </div>
-      <div>
-        <Button danger outline rounded>
-          danger
-        </Button>
-      </div>
+    <div>
+      <Accordion items={items} />
     </div>
   );
 }
