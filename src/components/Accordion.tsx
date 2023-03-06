@@ -3,7 +3,7 @@ import { AccordionType } from '../models/accordionType';
 import { GoChevronLeft, GoChevronDown } from 'react-icons/go';
 
 function Accordion({ items }: AccordionType) {
-  const [expandedIndex, setExpandedIndex] = useState(0);
+  const [expandedIndex, setExpandedIndex] = useState(-1);
 
   const handleClick = (itemIndex: number) => {
     if (itemIndex === expandedIndex) {
@@ -17,19 +17,19 @@ function Accordion({ items }: AccordionType) {
     const isExpanded = index === expandedIndex;
 
     return (
-      <div className="border" key={item.id}>
-        <div className="bg-gray-100" onClick={() => handleClick(index)}>
-          <span className="flex items-center">
+      <div key={item.id}>
+        <div className="flex justify-between p-3 bg-gray-50 border-b items-center cursor-pointer" onClick={() => handleClick(index)}>
             {item.label}
-            {isExpanded ? <GoChevronDown /> : <GoChevronLeft />}
-          </span>
+            
+            <span className='text-2xl'>{isExpanded ? <GoChevronDown /> : <GoChevronLeft />}</span>
+         
         </div>
-        {isExpanded && <div className="p-5">{item.content}</div>}
+        {isExpanded && <div className="p-5 border-b">{item.content}</div>}
       </div>
     );
   });
 
-  return <div>{renderedItems}</div>;
+  return <div className="border-x border-t rounded">{renderedItems}</div>;
 }
 
 export default Accordion;
