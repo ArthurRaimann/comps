@@ -5,7 +5,7 @@ import Panel from './Panel';
 
 function Dropdown({ options, value, onChange }: DropdownType) {
   const [isOpen, setIsOpen] = useState(false);
-  const divEl = useRef();
+  const divEl = useRef<HTMLBodyElement>();
 
   useEffect(() => {
     const handler = (event: any) => {
@@ -46,6 +46,7 @@ function Dropdown({ options, value, onChange }: DropdownType) {
   });
 
   return (
+    // @ts-ignore
     <div ref={divEl} className="w-48 relative border">
       <Panel
         className="flex justify-between items-center cursor-pointer"
