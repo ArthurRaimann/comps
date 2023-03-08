@@ -1,20 +1,19 @@
-import { ReactElement } from "react";
-import useNavigation from "../hooks/useNavigation";
+import { ReactElement } from 'react';
+import useNavigation from '../hooks/useNavigation';
 
 interface RouteType {
-    path: string,
-    children: ReactElement
+  path: string;
+  children: ReactElement;
 }
 
-function Route({path,children}: RouteType) {
-    const {currentPath} = useNavigation()
+function Route({ path, children }: RouteType) {
+  const { currentPath } = useNavigation();
 
-    if(path===currentPath) {
-        
-        return children
-    }
+  if (path === currentPath) {
+    return children;
+  }
 
-    return null
+  return null;
 }
 
-export default Route
+export default Route;
