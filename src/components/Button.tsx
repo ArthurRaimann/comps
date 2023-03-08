@@ -33,15 +33,20 @@ function Button({
     rest.className,
     'flex items-center px-3 py-1.5 border',
     {
-      'border-blue-500': primary,
+      'border-blue-500 hover:text-white hover:bg-blue-600 active:bg-blue-800 focus:outline-none':
+        primary,
       'bg-blue-500 text-white': primary && !outline,
-      'border-gray-900 ': secondary,
+      'border-gray-900 hover:text-white hover:bg-gray-600  active:bg-gray-800 focus:outline-none':
+        secondary,
       'bg-gray-900 text-white': secondary && !outline,
-      'border-green-500 ': success,
+      'border-green-500 hover:text-white hover:bg-green-600  active:bg-green-800 focus:outline-none':
+        success,
       'bg-green-500 text-white': success && !outline,
-      'border-yellow-400': warning,
+      'border-yellow-400 hover:text-white hover:bg-yellow-600  active:bg-yellow-800 focus:outline-none':
+        warning,
       'bg-yellow-400 text-white': warning && !outline,
-      'border-red-500 ': danger,
+      'border-red-500 hover:text-white hover:bg-red-600  active:bg-red-800 focus:outline-none':
+        danger,
       'bg-red-500 text-white': danger && !outline,
       'rounded-full': rounded,
       'bg-white': outline,

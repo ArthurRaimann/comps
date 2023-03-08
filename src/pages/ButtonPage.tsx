@@ -7,7 +7,7 @@ function ButtonPage() {
   };
 
   return (
-    <div>
+    <div className="flex flex-col space-y-4">
       <div>
         <Button primary onClick={handleClick}>
           <GoBell />
@@ -15,10 +15,25 @@ function ButtonPage() {
         </Button>
       </div>
       <div>
-        <Button secondary className="m-5">
+        <Button primary outline onClick={handleClick}>
+          <GoBell />
+          primary
+        </Button>
+      </div>
+      <div>
+        <Button secondary className="m-2">
           <GoCloudDownload />
           secondary
         </Button>
+      </div>
+      <div>
+        <Button secondary outline className="m-3">
+          <GoCloudDownload />
+          secondary
+        </Button>
+      </div>
+      <div>
+        <Button warning>warning</Button>
       </div>
       <div>
         <Button warning outline>
@@ -28,6 +43,16 @@ function ButtonPage() {
       <div>
         <Button success rounded>
           success
+        </Button>
+      </div>
+      <div>
+        <Button success outline rounded>
+          success
+        </Button>
+      </div>
+      <div>
+        <Button danger rounded>
+          danger
         </Button>
       </div>
       <div>
