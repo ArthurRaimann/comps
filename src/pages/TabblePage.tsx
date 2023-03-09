@@ -11,7 +11,7 @@ function TablePage() {
 
   const config = [
     {
-      label: 'Fruit Name',
+      label: 'Fruits',
       render: (data: { fruit: string }) => data.fruit,
       sortValue: (data: { fruit: string }) => data.fruit,
     },

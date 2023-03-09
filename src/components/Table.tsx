@@ -11,7 +11,7 @@ function Table({ data, config }: any) {
     if (column.header) {
       return <Fragment key={column.label}>{column.header()}</Fragment>;
     }
-    return <th key={column.label}>{column.label}</th>;
+    return <th className='pr-5' key={column.label}>{column.label}</th>;
   });
 
   const wholeTable = data.map((obj: any, index: number) => {
