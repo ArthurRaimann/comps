@@ -2,6 +2,20 @@ import { useState } from 'react';
 import Table from './Table';
 import { GoArrowSmallDown, GoArrowSmallUp } from 'react-icons/go';
 
+function getIcons(label: string, sortBy: string | null, sortOrder: 'asc' | 'desc' | null) {
+  if( label !== sortBy) {
+    return <div><GoArrowSmallUp/><GoArrowSmallDown/></div>;
+  }
+
+  if (sortOrder === 'asc') {
+    return <div><GoArrowSmallUp/></div>;
+  } else if (sortOrder === 'desc') {
+    return <div><GoArrowSmallDown/></div>;
+  } else {
+    return <div><GoArrowSmallUp/><GoArrowSmallDown/></div>;
+  }
+}
+
 function SortableTable(props: any) {
   const [sortOrder, setSortOrder] = useState<null | 'asc' | 'desc'>(null);
   const [sortBy, setSortBy] = useState<null | string>(null)
@@ -59,20 +73,6 @@ function SortableTable(props: any) {
   return (
     <Table {...props} data={sortedData} config={updatedConfig} />
   );
-}
-
-function getIcons(label: string, sortBy: string | null, sortOrder: 'asc' | 'desc' | null) {
-  if( label !== sortBy) {
-    return <div><GoArrowSmallUp/><GoArrowSmallDown/></div>;
-  }
-
-  if (sortOrder === 'asc') {
-    return <div><GoArrowSmallUp/></div>;
-  } else if (sortOrder === 'desc') {
-    return <div><GoArrowSmallDown/></div>;
-  } else {
-    return <div><GoArrowSmallUp/><GoArrowSmallDown/></div>;
-  }
 }
 
 export default SortableTable;
