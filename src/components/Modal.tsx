@@ -16,6 +16,7 @@ function Modal({onClose, children, actionBar}: ModalType) {
     }
   }, [])
 
+
   return ReactDOM.createPortal(
   <div>
     <div onClick={onClose} className="fixed inset-0 bg-gray-300 opacity-80"></div>
@@ -27,9 +28,9 @@ function Modal({onClose, children, actionBar}: ModalType) {
         </div>
       </div>
     </div>
-  </div>, 
-  document.querySelector('.modal-container')) 
-
+    </div>,
+  //@ts-ignore
+  document.querySelector('.modal-container'))
 }
 
 export default Modal;
